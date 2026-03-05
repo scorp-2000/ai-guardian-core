@@ -2,10 +2,10 @@ import { useState, useEffect, type FC } from 'react';
 import * as Lucide from 'lucide-react';
 
 /**
- * AI Guardian Pitch Deck - Version 4.5 (Perfect Center Fix)
- * - Zero Horizontal/Vertical Scroll Guarantee
- * - Centralized Flex Architecture
- * - Full Viewport Adaptivity for Laptops (13-16")
+ * AI Guardian Pitch Deck - Version 4.6 (Visual Edge Optimization)
+ * - Enhanced Technical Terminal with SVG Visualization
+ * - Full Hebrew translation for technical blocks
+ * - Zero Scroll & Perfect Center Architecture
  */
 
 interface IconProps extends Lucide.LucideProps {
@@ -26,7 +26,6 @@ export default function App() {
     font.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Heebo:wght@400;700;900&display=swap';
     document.head.appendChild(font);
 
-    // Force zero margin and hidden overflow on body
     const style = document.createElement('style');
     style.innerHTML = `
       body, html { margin: 0; padding: 0; overflow: hidden; width: 100%; height: 100%; box-sizing: border-box; background: #04060b; }
@@ -138,29 +137,76 @@ export default function App() {
       subtitle: 'Technical Supremacy',
       content: (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center h-full text-left w-full max-w-4xl mx-auto">
-           <div className="bg-black rounded-[24px] p-5 border border-blue-500/30 h-full max-h-[220px] md:max-h-full flex flex-col justify-between relative overflow-hidden group">
-              <div className="flex justify-between items-center">
-                 <div className="px-2 py-0.5 bg-blue-500/20 rounded-full text-[9px] text-blue-400 font-mono border border-blue-500/30 tracking-widest">26.4 TOPS</div>
+           {/* Visual Terminal Area */}
+           <div className="bg-black rounded-[24px] p-5 border border-blue-500/30 h-full min-h-[280px] flex flex-col justify-between relative overflow-hidden group">
+              <div className="absolute inset-0 opacity-10 pointer-events-none">
+                 <svg width="100%" height="100%" className="animate-pulse">
+                    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                       <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#3b82f6" strokeWidth="0.5"/>
+                    </pattern>
+                    <rect width="100%" height="100%" fill="url(#grid)" />
+                 </svg>
+              </div>
+              
+              <div className="flex justify-between items-center relative z-10">
+                 <div className="px-2 py-0.5 bg-blue-500/20 rounded-full text-[9px] text-blue-400 font-mono border border-blue-500/30 tracking-widest flex items-center gap-1">
+                    <div className="w-1 h-1 bg-blue-400 rounded-full animate-ping" />
+                    LIVE_FEED: 26.4 TOPS
+                 </div>
                  <Icon name="Cpu" size={24} className="text-blue-400 animate-pulse" />
               </div>
-              <div className="p-3 bg-slate-900/80 rounded-xl border border-slate-800 font-mono text-[9px] leading-tight text-blue-300">
-                 <p className="text-emerald-400 font-bold">{`>> YOLO26_PIPELINE_INIT`}</p>
-                 <p>{`>> SCANNING SITE_SECTOR_7...`}</p>
-                 <p className="text-red-500 font-bold">{`>> ALERT: BREACH_DETECTED_0.02s`}</p>
-                 <p>{`>> HAILO_NPU_CORE: ACTIVE`}</p>
+
+              {/* Dynamic Radar Visualization */}
+              <div className="flex-1 flex items-center justify-center relative">
+                 <div className="w-32 h-32 border border-blue-500/20 rounded-full flex items-center justify-center relative">
+                    <div className="absolute inset-0 border border-blue-500/40 rounded-full animate-ping opacity-20" />
+                    <div className="w-20 h-20 border border-emerald-500/30 rounded-full animate-pulse" />
+                    <div className="absolute top-4 left-10 w-2 h-2 bg-red-500 rounded shadow-[0_0_8px_red] animate-bounce" />
+                    <div className="absolute bottom-6 right-8 w-2 h-2 bg-emerald-400 rounded shadow-[0_0_8px_#34d399] opacity-60" />
+                    <div className="text-[8px] font-mono text-blue-400/40 uppercase absolute -bottom-4">Detection_Grid_Alpha</div>
+                 </div>
+              </div>
+
+              <div className="p-3 bg-slate-900/90 rounded-xl border border-slate-800 font-mono text-[9px] leading-tight text-blue-300 relative z-10 backdrop-blur-sm">
+                 <p className="text-emerald-400 font-bold">{`>> YOLO26_PIPELINE: OPTIMIZED`}</p>
+                 <p className="opacity-70">{`>> ANALYZING TRAJECTORY_MODELS...`}</p>
+                 <p className="text-red-500 font-bold animate-pulse">{`>> WARNING: ZONE_BREACH [ID_422]`}</p>
+                 <p className="text-blue-400">{`>> HAILO_NPU_LATENCY: 0.008s`}</p>
               </div>
            </div>
-           <div className="flex flex-col justify-center space-y-3 h-full px-2">
+
+           {/* Features with Hebrew */}
+           <div className="flex flex-col justify-center space-y-4 h-full px-2">
               {[
-                { icon: 'Zap', color: 'blue', title: 'NMS-free Latency', desc: 'Real-time hazard detection.' },
-                { icon: 'Lock', color: 'emerald', title: 'Data Sovereignty', desc: '100% On-site processing.' },
-                { icon: 'Eye', color: 'purple', title: 'Predictive AI', desc: 'Zero-Harm analytics.' }
+                { 
+                  icon: 'Zap', color: 'blue', 
+                  title: 'NMS-free Latency', 
+                  heb: 'השהייה אפסית (NMS-free)',
+                  desc: 'Real-time hazard detection with zero bottlenecks.' 
+                },
+                { 
+                  icon: 'Lock', color: 'emerald', 
+                  title: 'Data Sovereignty', 
+                  heb: 'ריבונות מלאה על המידע',
+                  desc: '100% On-site processing. Privacy by design.' 
+                },
+                { 
+                  icon: 'Eye', color: 'purple', 
+                  title: 'Predictive AI', 
+                  heb: 'בינה מלאכותית חוזת פני עתיד',
+                  desc: 'Accident prevention via trajectory analytics.' 
+                }
               ].map((item, idx) => (
-                <div key={idx} className="flex gap-3 items-center">
-                   <div className={`p-2 bg-${item.color}-500/10 rounded-lg`}><Icon name={item.icon} size={18} className={`text-${item.color}-400`} /></div>
-                   <div>
-                      <h5 className="text-white font-bold text-[11px] md:text-xs uppercase italic leading-none">{item.title}</h5>
-                      <p className="text-slate-400 text-[10px] mt-1 italic leading-tight">{item.desc}</p>
+                <div key={idx} className="flex gap-4 items-start group">
+                   <div className={`p-2.5 bg-${item.color}-500/10 rounded-xl border border-${item.color}-500/20 group-hover:scale-110 transition-transform`}>
+                      <Icon name={item.icon} size={20} className={`text-${item.color}-400`} />
+                   </div>
+                   <div className="space-y-1">
+                      <div className="flex flex-col">
+                        <h5 className="text-white font-black text-xs md:text-sm uppercase italic leading-none">{item.title}</h5>
+                        <span className="text-emerald-400 font-heebo text-[10px] font-bold mt-1" dir="rtl">{item.heb}</span>
+                      </div>
+                      <p className="text-slate-400 text-[10px] leading-tight">{item.desc}</p>
                    </div>
                 </div>
               ))}
@@ -212,7 +258,6 @@ export default function App() {
   return (
     <div className="h-screen w-full bg-[#04060b] text-slate-100 p-4 md:p-6 flex flex-col items-center overflow-hidden relative selection:bg-blue-500/30">
       
-      {/* Header - Fixed constraints */}
       <header className="flex justify-between items-center mb-4 relative z-10 flex-shrink-0 w-full max-w-5xl px-2">
         <div className="flex items-center gap-2">
           <div className="p-1.5 bg-blue-600 rounded-lg shadow-lg shadow-blue-500/50">
@@ -236,7 +281,6 @@ export default function App() {
         </div>
       </header>
 
-      {/* Main Container - Absolute Centering */}
       <main className="flex-1 flex flex-col justify-center items-center relative z-10 w-full max-w-5xl overflow-hidden px-2">
         <div className="bg-slate-900/40 backdrop-blur-[40px] border border-white/5 rounded-[2.5rem] p-6 md:p-8 shadow-[0_0_100px_rgba(0,0,0,0.8)] h-full max-h-[75vh] w-full flex flex-col relative overflow-hidden group">
           
@@ -256,7 +300,6 @@ export default function App() {
         </div>
       </main>
 
-      {/* Footer - Consistent constraints */}
       <footer className="mt-4 flex justify-between items-center w-full max-w-5xl relative z-10 flex-shrink-0 px-4">
         <div className="flex gap-2">
           {slides.map((_, idx) => (
@@ -277,7 +320,6 @@ export default function App() {
         </div>
       </footer>
 
-      {/* Background Decor - Visual Depth without overflow */}
       <div className="fixed top-0 right-0 w-[600px] h-[600px] bg-blue-600/[0.02] blur-[150px] rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none" />
       <div className="fixed bottom-0 left-0 w-[600px] h-[600px] bg-indigo-600/[0.02] blur-[150px] rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none" />
     </div>
