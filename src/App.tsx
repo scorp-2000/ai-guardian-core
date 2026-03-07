@@ -2,16 +2,25 @@ import { useState, useEffect, type FC } from 'react';
 import * as Lucide from 'lucide-react';
 
 /**
- * AI Guardian Pitch Deck - Version 6.1 (Refined Balanced)
- * - Restored Manifesto Content from V5.7
- * - Reduced font weight from Black to Bold for elegance
- * - Fixed Hebrew visibility and alignment
- * - Maintained clean Enterprise HUD aesthetic
+ * Nostos AI Pitch Deck - Version 6.6 (Official Production Build)
+ * - Brand: Nostos AI
+ * - Motto: "Securing the Path Home."
+ * - Logo: Integrated SVG Shield & Brain Architecture
+ * - Typography: Sentence case + Bold 700 + Glow Exceptions
  */
 
 interface IconProps extends Lucide.LucideProps {
   name: string;
 }
+
+// Рендеринг вашего растрового логотипа
+const NostosLogo: FC<{ className?: string }> = ({ className }) => (
+  <img 
+    src="/logo.jpg" 
+    alt="Nostos AI Logo" 
+    className={`object-cover ${className}`}
+  />
+);
 
 export default function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -44,7 +53,7 @@ export default function App() {
         border: 1px solid rgba(255, 255, 255, 0.05);
       }
       .no-exceptions-glow {
-        text-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+        text-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
       }
     `;
     document.head.appendChild(style);
@@ -55,7 +64,7 @@ export default function App() {
   if (!isReady) return (
     <div className="h-screen w-full bg-[#020408] flex items-center justify-center">
       <div className="text-blue-500 font-mono animate-pulse tracking-[0.5em] text-xs">
-        STABILIZING_SYSTEM_V6.1...
+        BOOTING_NOSTOS_CORE_V6.6...
       </div>
     </div>
   );
@@ -67,25 +76,25 @@ export default function App() {
 
   const slides = [
     {
-      title: 'AI Guardian',
-      subtitle: 'CORE_MISSION_VALUATION',
+      title: 'Nostos AI',
+      subtitle: 'Securing the Path Home.',
       content: (
         <div className="flex flex-col items-center justify-center space-y-10 text-center h-full w-full max-w-4xl mx-auto px-4">
           <div className="relative">
-            <div className="absolute inset-0 bg-blue-600/20 blur-[100px] rounded-full animate-pulse" />
-            <div className="relative p-8 rounded-[32px] glass-panel border-blue-500/20 shadow-2xl flex items-center justify-center">
-              <Icon name="ShieldHeart" className="w-16 h-16 text-blue-400" />
+            <div className="absolute inset-0 bg-blue-600/30 blur-[120px] rounded-full animate-pulse" />
+            <div className="relative p-2 rounded-[32px] glass-panel border-blue-500/30 shadow-[0_0_50px_rgba(59,130,246,0.2)] flex items-center justify-center">
+              <NostosLogo className="w-28 h-28 rounded-[24px] shadow-[0_0_20px_rgba(59,130,246,0.4)]" />
             </div>
           </div>
           
           <div className="space-y-6">
-            <div className="space-y-2 uppercase tracking-tighter">
-              <p className="text-blue-500 font-mono text-xs tracking-[0.4em] mb-4">// OUR_MISSION</p>
+            <div className="space-y-2 tracking-tighter">
+              <p className="text-blue-500 font-mono text-xs tracking-[0.4em] mb-4 uppercase">// OUR MISSION IS:</p>
               <h1 className="text-3xl md:text-5xl font-bold text-white leading-tight">
                 Every worker returns home safely<br/>
                 to their family.<br/>
                 Every day.<br/>
-                <span className="text-blue-500 no-exceptions-glow tracking-[0.05em]">NO EXCEPTIONS!</span>
+                <span className="text-blue-500 no-exceptions-glow tracking-[0.05em] uppercase">NO EXCEPTIONS!</span>
               </h1>
             </div>
             
@@ -99,7 +108,7 @@ export default function App() {
 
           <div className="flex gap-4 font-mono text-[10px] tracking-widest uppercase pt-6">
              <div className="px-4 py-2 bg-blue-500/5 border border-blue-500/20 rounded-xl text-blue-400 flex items-center gap-2">
-                <Icon name="Cpu" size={12}/> YOLO26_ENGINE
+                <Icon name="Cpu" size={12}/> NOSTOS_EDGE_V2.6
              </div>
              <div className="px-4 py-2 bg-emerald-500/5 border border-emerald-500/20 rounded-xl text-emerald-400 font-bold">
                 DEADLINE: 21.03.2026
@@ -109,15 +118,15 @@ export default function App() {
       )
     },
     {
-      title: 'Economic Impact',
-      subtitle: 'DATA_VALIDATED_RISK_ASSESSMENT',
+      title: 'Operational Integrity',
+      subtitle: 'Eliminating Risks, Protecting People',
       content: (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch h-full py-2 text-left w-full max-w-5xl mx-auto px-4">
           <div className="flex flex-col justify-between space-y-3">
              {[
-               { icon: 'Heart', color: 'red', title: 'Human Safety', heb: 'ביטחון אנושי', desc: 'Zero fatalities as the only acceptable KPI.' },
-               { icon: 'ShieldCheck', color: 'amber', title: 'Legal Protection', heb: 'הגנה משפטית', desc: 'Digital alibi for project management.' },
-               { icon: 'TrendingDown', color: 'blue', title: 'Operational Flow', heb: 'רציפות תפעולית', desc: 'Eliminating work-stoppage orders.' }
+               { icon: 'Heart', color: 'red', title: 'Human Safety', heb: 'ביטחון אנושי', desc: 'Zero fatalities as the only acceptable industry KPI.' },
+               { icon: 'ShieldCheck', color: 'amber', title: 'Legal Protection', heb: 'הגנה משפטית', desc: 'Digital alibi for project managers and site owners.' },
+               { icon: 'TrendingDown', color: 'blue', title: 'Operational Flow', heb: 'רציפות תפעולית', desc: 'Preventing work-stoppage orders costing ₪350k/day.' }
              ].map((item, idx) => (
                <div key={idx} className="p-4 glass-panel rounded-2xl border-l-4 border-l-blue-500/40 hover:border-l-blue-500 transition-all duration-300">
                   <div className="flex justify-between items-center mb-1">
@@ -133,17 +142,17 @@ export default function App() {
           <div className="glass-panel p-6 rounded-[32px] flex flex-col justify-between h-full relative overflow-hidden">
              <div className="space-y-6">
                 <div className="space-y-2">
-                   <div className="flex justify-between text-[10px] text-slate-500 font-mono tracking-widest italic"><span>MANUAL_AUDIT</span><span className="text-red-500 font-bold">85% RISK</span></div>
+                   <div className="flex justify-between text-[10px] text-slate-500 font-mono tracking-widest italic uppercase"><span>MANUAL_AUDIT</span><span className="text-red-500 font-bold">85% RISK</span></div>
                    <div className="w-full h-1 bg-white/5 rounded-full overflow-hidden"><div className="h-full bg-red-600/80 w-[85%]" /></div>
                 </div>
                 <div className="space-y-2">
-                   <div className="flex justify-between text-[10px] text-blue-400 font-mono tracking-widest italic font-bold"><span>AI_GUARDIAN_SOTA</span><span className="text-blue-400 font-bold">12% RESIDUAL</span></div>
+                   <div className="flex justify-between text-[10px] text-blue-400 font-mono tracking-widest italic font-bold uppercase"><span>NOSTOS_AI_SOTA</span><span className="text-blue-400 font-bold">12% RESIDUAL</span></div>
                    <div className="w-full h-3 bg-white/5 rounded-full overflow-hidden shadow-[0_0_15px_rgba(59,130,246,0.1)]"><div className="h-full bg-blue-500 w-[12%] animate-pulse" /></div>
                 </div>
              </div>
              <div className="mt-6 border-t border-white/5 pt-6 relative z-10 text-center">
                <p className="text-base text-slate-200 italic font-medium font-heebo leading-tight" dir="rtl">
-                 "בטיחות היא לא הוצאה, היא ההשקעה בנכס היקר ביותר שלכם – <span className="text-blue-400">האנשים.</span>"
+                 "בטיחות היא לא הוצאה, היא ההשקעה בנכס היקר ביותר שלכם – <span className="text-blue-400 font-bold">האנשים.</span>"
                </p>
                
                <div className="mt-8 flex flex-col items-center gap-3">
@@ -167,7 +176,6 @@ export default function App() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center h-full text-left w-full max-w-5xl mx-auto px-4">
            <div className="bg-black/40 rounded-[32px] p-6 border border-blue-500/10 h-full min-h-[300px] flex flex-col justify-between relative overflow-hidden group">
               <div className="absolute inset-0 opacity-10 cyber-grid" />
-              
               <div className="flex justify-between items-center relative z-10">
                  <div className="px-2 py-0.5 bg-blue-500/20 rounded-full text-[9px] text-blue-400 font-mono tracking-widest flex items-center gap-1.5">
                     <div className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-ping" />
@@ -175,32 +183,29 @@ export default function App() {
                  </div>
                  <Icon name="Cpu" size={24} className="text-blue-500 animate-pulse" />
               </div>
-
               <div className="flex-1 flex items-center justify-center relative">
                  <div className="w-40 h-40 border border-blue-500/10 rounded-full flex items-center justify-center relative">
                     <div className="absolute inset-0 border border-blue-500/20 rounded-full animate-ping opacity-10" />
                     <div className="w-24 h-24 border border-emerald-500/20 rounded-full flex items-center justify-center">
                        <div className="w-2 h-2 bg-emerald-500 rounded-full shadow-[0_0_10px_#10b981]" />
                     </div>
-                    <div className="text-[7px] font-mono text-blue-400/40 uppercase absolute -bottom-6 tracking-widest">Visual_Core_Alpha</div>
+                    <div className="text-[7px] font-mono text-blue-400/40 uppercase absolute -bottom-6 tracking-widest">Homecoming_Core_Alpha</div>
                  </div>
               </div>
-
               <div className="p-3 glass-panel rounded-xl border border-white/5 font-mono text-[9px] leading-tight text-blue-300 relative z-10">
-                 <p className="text-emerald-400 font-bold">{`>> YOLO26_PIPELINE: ACTIVE`}</p>
-                 <p className="text-red-500 font-bold animate-pulse">{`>> WARNING: ZONE_BREACH [ID_42]`}</p>
-                 <p className="text-blue-400">{`>> HAILO_LATENCY: 0.008s`}</p>
+                 <p className="text-emerald-400 font-bold uppercase tracking-tighter">{`>> NOSTOS_YOLO26: ACTIVE`}</p>
+                 <p className="text-red-500 font-bold animate-pulse uppercase tracking-tighter">{`>> WARNING: ZONE_BREACH [ID_42]`}</p>
+                 <p className="text-blue-400 uppercase tracking-tighter">{`>> HAILO_LATENCY: 0.008s`}</p>
               </div>
            </div>
-
            <div className="flex flex-col justify-center space-y-6 h-full px-4 relative z-10">
               {[
-                { icon: 'Zap', color: 'blue', title: 'NMS-free Latency', heb: 'השהייה אפסית (NMS-free)', desc: 'Zero bottlenecks. Instant response.' },
-                { icon: 'Lock', color: 'emerald', title: 'Data Sovereignty', heb: 'ריבונות מלאה על המידע', desc: '100% On-site. Full privacy.' },
-                { icon: 'HeartPulse', color: 'purple', title: 'Life Preservation', heb: 'הצלת חיי אדם', desc: 'Predictive analytics for safety.' }
+                { icon: 'Zap', color: 'blue', title: 'NMS-free Latency', heb: 'השהייה אפסית (NMS-free)', desc: 'Zero bottlenecks. Instant life-saving response.' },
+                { icon: 'Lock', color: 'emerald', title: 'Data Sovereignty', heb: 'ריבונות מלאה על המידע', desc: '100% On-site. Full privacy and compliance.' },
+                { icon: 'HeartPulse', color: 'purple', title: 'Life Preservation', heb: 'הצלת חיי אדם', desc: 'Predictive trajectory analytics for hazard prevention.' }
               ].map((item, idx) => (
                 <div key={idx} className="flex gap-4 items-start group">
-                   <div className={`p-3 glass-panel rounded-xl border border-${item.color}-500/10 group-hover:bg-blue-500/10 transition-all`}>
+                   <div className={`p-3 glass-panel rounded-xl border border-${item.color}-500/10 group-hover:bg-blue-500/10 transition-all shadow-lg`}>
                       <Icon name={item.icon} size={20} className={`text-${item.color}-400`} />
                    </div>
                    <div className="space-y-1">
@@ -224,7 +229,7 @@ export default function App() {
           <div className="p-5 glass-panel border-emerald-500/20 rounded-[28px] w-full flex items-center justify-between shadow-xl">
              <div className="text-left">
                 <p className="text-emerald-500 font-mono text-[10px] uppercase tracking-widest mb-1">Sandbox Submission</p>
-                <p className="text-white font-bold text-3xl tracking-tighter italic">MARCH 21, 23:59</p>
+                <p className="text-white font-bold text-3xl tracking-tighter italic uppercase">March 21, 23:59</p>
              </div>
              <div className="text-right font-heebo" dir="rtl">
                 <p className="text-emerald-400 text-sm font-bold leading-none">המועד עודכן (מצב ביטחוני)</p>
@@ -233,7 +238,7 @@ export default function App() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
              <div className="p-5 glass-panel rounded-[28px] flex items-center gap-4">
-                <div className="p-3 bg-blue-600/10 rounded-xl border border-blue-500/20"><Icon name="Users" className="text-blue-400 w-8 h-8" /></div>
+                <div className="p-3 bg-blue-600/10 rounded-xl border border-blue-500/20 shadow-inner"><Icon name="Users" className="text-blue-400 w-8 h-8" /></div>
                 <div className="text-left">
                    <p className="text-white font-bold text-xl tracking-tighter uppercase italic leading-none">Arkady</p>
                    <p className="text-blue-500 font-mono text-[9px] tracking-widest uppercase mt-2 opacity-60">System Architect</p>
@@ -242,13 +247,13 @@ export default function App() {
              <div className="p-5 glass-panel rounded-[28px] flex flex-col justify-center text-right font-heebo" dir="rtl">
                 <ul className="space-y-2 text-slate-300 text-xs font-medium">
                    <li className="flex items-center gap-2 justify-end"><span>מימון מלא (מענק רשות החדשנות)</span><Icon name="CheckCircle2" size={14} className="text-emerald-500" /></li>
-                   <li className="flex items-center gap-2 justify-end"><span>מעמד רשמי מול הרגולטור (Sandbox)</span><Icon name="CheckCircle2" size={14} className="text-emerald-500" /></li>
+                   <li className="flex items-center gap-2 justify-end"><span>מעמד רשמי מול הרגולטור (Sandbox)</span><Icon name="CheckCircle2" size={14} className="text-emerald-400" /></li>
                 </ul>
              </div>
           </div>
           <div className="flex flex-col items-center space-y-3 pt-4">
             <a 
-              href="mailto:arkady.aiguardian@gmail.com?subject=Strategic%20Partnership%3A%20AI%20Guardian%20Sandbox%202026&body=Hello%20Arkady%2C%0A%0AWe%20are%20interested%20in%20discussing%20the%20Design%20Partnership%20for%20the%20AI%20Guardian%20platform.%0A%0APlease%20send%20us%20the%20LOI%20draft.%0A%0A%5BCompany%20Name%5D"
+              href="mailto:arkady.aiguardian@gmail.com?subject=Strategic%20Partnership%3A%20Nostos%20AI%20Sandbox%202026&body=Hello%20Arkady%2C%0A%0AWe%20are%20interested%20in%20discussing%20the%20Design%20Partnership%20for%20the%20Nostos%20AI%20platform.%0A%0APlease%20send%20us%20the%20LOI%20draft.%0A%0A%5BCompany%20Name%5D"
               className="bg-white hover:bg-blue-50 text-black px-12 py-5 rounded-full font-bold text-lg transition-all shadow-xl uppercase tracking-widest italic hover:scale-105 active:scale-95 group inline-block decoration-transparent"
             >
                <span className="flex items-center justify-center gap-3">
@@ -272,22 +277,22 @@ export default function App() {
       
       <header className="flex justify-between items-center mb-8 relative z-20 flex-shrink-0 w-full max-w-6xl px-4">
         <div className="flex items-center gap-3">
-          <div className="p-2.5 bg-blue-600/10 border border-blue-500/30 rounded-xl">
-            <Icon name="Shield" className="text-blue-400 w-6 h-6" />
+          <div className="p-1 bg-blue-600/10 border border-blue-500/30 rounded-[14px] flex items-center justify-center shadow-lg">
+            <NostosLogo className="w-10 h-10 rounded-[10px]" />
           </div>
           <div>
-            <span className="text-xl font-bold text-white uppercase italic tracking-tighter block leading-none">AI Guardian</span>
+            <span className="text-xl font-bold text-white uppercase italic tracking-tighter block leading-none">Nostos AI</span>
             <span className="text-[8px] text-blue-500 font-mono tracking-[0.2em] uppercase block mt-1.5 font-bold">Industrial_Intelligence</span>
           </div>
         </div>
         <div className="hidden md:flex items-center gap-8 text-[9px] font-mono text-slate-500 tracking-[0.2em] uppercase">
           <div className="text-right">
-            <p className="text-blue-400 font-bold">Founder: Arkady</p>
+            <p className="text-blue-400 font-bold italic">Founder: Arkady</p>
             <p className="font-heebo opacity-50" dir="rtl">26 שנות ניסיון</p>
           </div>
           <div className="h-8 w-px bg-white/5" />
           <div className="text-right font-bold">
-            <p className="text-emerald-500 tracking-widest leading-none">Sota_2.6_Ready</p>
+            <p className="text-emerald-500 tracking-widest leading-none underline decoration-emerald-500/20">Sota_2.6_Ready</p>
             <p className="font-heebo leading-none mt-2 opacity-50" dir="rtl">תאימות רגולטורית</p>
           </div>
         </div>
@@ -316,7 +321,7 @@ export default function App() {
           {slides.map((_, idx) => (
             <div 
               key={idx} 
-              className={`h-[3px] rounded-full transition-all duration-500 cursor-pointer ${idx === currentSlide ? 'w-12 bg-blue-500' : 'w-3 bg-white/10 hover:bg-white/20'}`}
+              className={`h-[3px] rounded-full transition-all duration-500 cursor-pointer ${idx === currentSlide ? 'w-12 bg-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.8)]' : 'w-3 bg-white/10 hover:bg-white/20'}`}
               onClick={() => setCurrentSlide(idx)}
             />
           ))}
@@ -331,7 +336,7 @@ export default function App() {
         </div>
       </footer>
 
-      <div className="fixed top-0 right-0 w-[600px] h-[600px] bg-blue-600/[0.03] blur-[150px] rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+      <div className="fixed top-0 right-0 w-[600px] h-[600px] bg-blue-600/[0.03] blur-[150px] rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none animate-pulse" />
       <div className="fixed bottom-0 left-0 w-[600px] h-[600px] bg-indigo-600/[0.03] blur-[150px] rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none" />
     </div>
   );
