@@ -83,18 +83,18 @@ export default function App() {
       title: 'NOSTOS_AI',
       subtitle: 'Securing the Path Home.',
       content: (
-        <div className="flex flex-col items-center justify-center space-y-4 lg:space-y-6 text-center h-full w-full max-w-5xl mx-auto px-2">
+        <div className="flex flex-col items-center justify-center space-y-3 lg:space-y-4 text-center h-full w-full max-w-5xl mx-auto px-2">
           <div className="relative flex-shrink-0">
             <div className="absolute inset-0 bg-blue-600/30 blur-[100px] rounded-full animate-pulse" />
-            <div className="relative p-2 rounded-[32px] glass-panel border-blue-500/30 shadow-[0_0_50px_rgba(59,130,246,0.2)] flex items-center justify-center flex-shrink-0">
-              <NostosLogo className="w-24 h-24 md:w-32 md:h-32 rounded-[24px] drop-shadow-[0_0_20px_rgba(59,130,246,0.4)]" />
+            <div className="relative p-2 rounded-[24px] lg:rounded-[32px] glass-panel border-blue-500/30 shadow-[0_0_50px_rgba(59,130,246,0.2)] flex items-center justify-center flex-shrink-0">
+              <NostosLogo className="w-20 h-20 md:w-24 md:h-24 lg:w-32 lg:h-32 rounded-[16px] lg:rounded-[24px] drop-shadow-[0_0_20px_rgba(59,130,246,0.4)]" />
             </div>
           </div>
           
-          <div className="space-y-4">
-            <div className="space-y-2 tracking-tighter">
-              <p className="text-blue-500 font-mono text-xs tracking-[0.4em] mb-2 uppercase underline underline-offset-8 decoration-blue-500/40">OUR MISSION IS:</p>
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+          <div className="space-y-2 lg:space-y-4">
+            <div className="space-y-1 lg:space-y-2 tracking-tighter">
+              <p className="text-blue-500 font-mono text-[10px] md:text-xs tracking-[0.4em] mb-1 lg:mb-2 uppercase underline underline-offset-8 decoration-blue-500/40">OUR MISSION IS:</p>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight">
                 Every worker returns home safely<br/>
                 to their family.<br/>
                 Every day.<br/>
@@ -102,15 +102,15 @@ export default function App() {
               </h1>
             </div>
             
-            <div className="pt-4 border-t border-white/5 font-heebo" dir="rtl">
-              <p className="text-slate-400 font-bold text-lg md:text-2xl leading-relaxed">
+            <div className="pt-2 lg:pt-4 border-t border-white/5 font-heebo" dir="rtl">
+              <p className="text-slate-400 font-bold text-base md:text-xl lg:text-2xl leading-relaxed">
                 החזון שלנו: שכל פועל יחזור הביתה בשלום למשפחתו.<br/>
                 בכל יום. <span className="text-blue-500">ללא פשרות.</span>
               </p>
             </div>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-3 font-mono text-[10px] md:text-xs tracking-widest uppercase pt-2 flex-shrink-0">
+          <div className="flex flex-wrap justify-center gap-2 lg:gap-3 font-mono text-[9px] md:text-[10px] lg:text-xs tracking-widest uppercase pt-1 lg:pt-2 flex-shrink-0">
              <div className="px-4 py-2 bg-blue-500/5 border border-blue-500/20 rounded-xl text-blue-400 flex items-center gap-2">
                 <Icon name="Cpu" size={14}/> NOSTOS_EDGE_V2.6
              </div>
@@ -178,7 +178,7 @@ export default function App() {
       subtitle: 'HAILO-8_NPU_ACCELERATION',
       content: (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch h-full text-left w-full max-w-7xl mx-auto">
-           <div className="bg-black/40 rounded-[32px] p-6 lg:p-8 border border-blue-500/10 flex flex-col justify-between relative overflow-hidden group min-h-[250px] lg:min-h-[300px]">
+           <div className="bg-black/40 rounded-[32px] p-5 lg:p-8 border border-blue-500/10 flex flex-col justify-between relative overflow-hidden group min-h-[220px] lg:min-h-[300px]">
               <div className="absolute inset-0 opacity-10 cyber-grid" />
               <div className="flex justify-between items-center relative z-10">
                  <div className="px-3 py-1 bg-blue-500/20 rounded-full text-[10px] text-blue-400 font-mono tracking-widest flex items-center gap-2">
@@ -280,7 +280,7 @@ export default function App() {
       <div className="absolute inset-0 cyber-grid opacity-60 pointer-events-none" />
       
       {/* 1. Header (Tightened) */}
-      <header className="flex justify-between items-center mb-3 md:mb-4 relative z-20 flex-shrink-0 w-full max-w-[1800px] px-2 lg:px-6">
+      <header className="flex justify-between items-center mb-2 md:mb-3 relative z-20 flex-shrink-0 w-full max-w-[1800px] px-2 lg:px-6">
         <div className="flex items-center gap-3 lg:gap-4">
           <div className="p-1.5 bg-blue-600/10 border border-blue-500/30 rounded-[12px] lg:rounded-[16px] flex items-center justify-center shadow-lg flex-shrink-0">
             <NostosLogo className="w-10 h-10 lg:w-12 lg:h-12 rounded-[8px] lg:rounded-[10px]" />
@@ -305,11 +305,11 @@ export default function App() {
 
       {/* 2. Main Stage (Expanded Max Width & Min Height 0) */}
       <main className="flex-1 flex flex-col justify-center items-center relative z-20 w-full max-w-[1800px] overflow-hidden px-1 lg:px-4">
-        <div className="glass-panel rounded-[2rem] lg:rounded-[3rem] p-5 lg:p-8 shadow-[0_0_80px_rgba(0,0,0,0.5)] h-full w-full flex flex-col relative overflow-hidden group">
+        <div className="glass-panel rounded-[2rem] lg:rounded-[3rem] p-4 lg:p-6 xl:p-8 shadow-[0_0_80px_rgba(0,0,0,0.5)] h-full w-full flex flex-col relative overflow-hidden group">
           <div className="absolute top-0 right-0 w-24 h-24 lg:w-32 lg:h-32 border-t border-r border-blue-500/10 rounded-tr-[2rem] lg:rounded-tr-[3rem] pointer-events-none group-hover:border-blue-500/30 transition-all duration-1000" />
           
-          <div className="mb-4 lg:mb-6 text-left flex-shrink-0 relative z-10">
-            <h2 className={`text-3xl lg:text-5xl font-bold text-white mb-2 tracking-tighter leading-none italic uppercase ${slides[currentSlide].title === 'NOSTOS_AI' ? 'font-nostos' : ''}`}>
+          <div className="mb-2 lg:mb-4 text-left flex-shrink-0 relative z-10">
+            <h2 className={`text-3xl lg:text-5xl font-bold text-white mb-1 lg:mb-2 tracking-tighter leading-none italic uppercase ${slides[currentSlide].title === 'NOSTOS_AI' ? 'font-nostos' : ''}`}>
               {slides[currentSlide].title}
             </h2>
             <div className="flex items-center gap-3 lg:gap-4 mt-2">
@@ -328,7 +328,7 @@ export default function App() {
       </main>
 
       {/* 3. Footer (Tightened) */}
-      <footer className="mt-3 md:mt-4 flex justify-between items-center w-full max-w-[1800px] relative z-20 flex-shrink-0 px-4 lg:px-8">
+      <footer className="mt-2 md:mt-3 flex justify-between items-center w-full max-w-[1800px] relative z-20 flex-shrink-0 px-4 lg:px-8">
         <div className="flex gap-3 lg:gap-4">
           {slides.map((_, idx) => (
             <div 
