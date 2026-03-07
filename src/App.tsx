@@ -2,11 +2,10 @@ import { useState, useEffect, type FC } from 'react';
 import * as Lucide from 'lucide-react';
 
 /**
- * Nostos AI Pitch Deck - Version 6.9.1
- * - Brand: Nostos AI
- * - Logo: Routed strictly to /logo.png based on public dir mapping
- * - Typography: Sentence case + Bold 700 + Glow Exceptions
- * - Update: Removed // from mission subline and added underline
+ * Nostos AI Pitch Deck - Version 6.9.2 (Targeted Font Override)
+ * - Rolled back to V6.9.1 Baseline
+ * - Targeted Typography: 'Michroma' applied ONLY to "Nostos AI" and "Securing the Path Home"
+ * - Rest of the text remains unchanged (Inter/Heebo)
  */
 
 interface IconProps extends Lucide.LucideProps {
@@ -33,7 +32,8 @@ export default function App() {
 
     const font = document.createElement('link');
     font.rel = 'stylesheet';
-    font.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Heebo:wght@300;400;700;800&family=JetBrains+Mono:wght@400;700&display=swap';
+    // Добавлен Michroma специально для названия и девиза
+    font.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Heebo:wght@300;400;700;800&family=JetBrains+Mono:wght@400;700&family=Michroma&display=swap';
     document.head.appendChild(font);
 
     const style = document.createElement('style');
@@ -55,6 +55,10 @@ export default function App() {
       .no-exceptions-glow {
         text-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
       }
+      /* Изолированный класс для Michroma (Vector 02) */
+      .font-nostos {
+        font-family: 'Michroma', sans-serif;
+      }
     `;
     document.head.appendChild(style);
 
@@ -64,7 +68,7 @@ export default function App() {
   if (!isReady) return (
     <div className="h-screen w-full bg-[#020408] flex items-center justify-center">
       <div className="text-blue-500 font-mono animate-pulse tracking-[0.5em] text-xs">
-        BOOTING_NOSTOS_CORE_V6.9.1...
+        BOOTING_NOSTOS_CORE_V6.9.2...
       </div>
     </div>
   );
@@ -277,11 +281,12 @@ export default function App() {
       
       <header className="flex justify-between items-center mb-8 relative z-20 flex-shrink-0 w-full max-w-6xl px-4">
         <div className="flex items-center gap-3">
-          <div className="p-1 bg-blue-600/10 border border-blue-500/30 rounded-[14px] flex items-center justify-center shadow-lg overflow-hidden">
+          <div className="p-1 bg-blue-600/10 border border-blue-500/30 rounded-[14px] flex items-center justify-center shadow-lg overflow-hidden text-blue-400">
             <NostosLogo className="w-10 h-10 rounded-[10px]" />
           </div>
           <div>
-            <span className="text-xl font-bold text-white uppercase italic tracking-tighter block leading-none">Nostos AI</span>
+            {/* Точечное применение шрифта Nostos AI (Michroma) */}
+            <span className="text-xl font-bold text-white uppercase tracking-tighter block leading-none font-nostos">Nostos AI</span>
             <span className="text-[8px] text-blue-500 font-mono tracking-[0.2em] uppercase block mt-1.5 font-bold">Industrial_Intelligence</span>
           </div>
         </div>
@@ -303,10 +308,16 @@ export default function App() {
           <div className="absolute top-0 right-0 w-32 h-32 border-t border-r border-blue-500/10 rounded-tr-[3.5rem] pointer-events-none group-hover:border-blue-500/30 transition-all duration-1000" />
           
           <div className="mb-8 text-left flex-shrink-0 relative z-10">
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-1 tracking-tighter leading-none uppercase italic">{slides[currentSlide].title}</h2>
+            {/* Динамическое применение Michroma только если заголовок 'Nostos AI' */}
+            <h2 className={`text-3xl md:text-5xl font-bold text-white mb-1 tracking-tighter leading-none italic uppercase ${slides[currentSlide].title === 'Nostos AI' ? 'font-nostos' : ''}`}>
+              {slides[currentSlide].title}
+            </h2>
             <div className="flex items-center gap-3">
               <div className="h-px w-10 bg-blue-500" />
-              <p className="text-blue-400 font-mono text-[9px] md:text-xs tracking-[0.4em] uppercase font-bold">{slides[currentSlide].subtitle}</p>
+              {/* Динамическое применение Michroma только для 'Securing the Path Home.' */}
+              <p className={`text-blue-400 text-[9px] md:text-xs font-bold ${slides[currentSlide].subtitle === 'Securing the Path Home.' ? 'font-nostos uppercase tracking-[0.1em]' : 'font-mono uppercase tracking-[0.4em]'}`}>
+                {slides[currentSlide].subtitle}
+              </p>
             </div>
           </div>
           
@@ -328,10 +339,10 @@ export default function App() {
         </div>
         <div className="flex gap-4">
           <button onClick={prev} className={`p-4 rounded-[2rem] bg-white/5 border border-white/5 text-white transition-all hover:border-blue-500 active:scale-90 ${currentSlide === 0 ? 'opacity-10 cursor-not-allowed' : ''}`}>
-            <Icon name="ChevronLeft" size={24} />
+            <Icon name="ChevronLeft" size={28} />
           </button>
           <button onClick={next} className={`p-4 rounded-[2rem] bg-blue-600 text-white shadow-xl transition-all hover:bg-blue-500 active:scale-95 ${currentSlide === slides.length - 1 ? 'opacity-10 cursor-not-allowed' : ''}`}>
-            <Icon name="ChevronRight" size={24} />
+            <Icon name="ChevronRight" size={28} />
           </button>
         </div>
       </footer>
