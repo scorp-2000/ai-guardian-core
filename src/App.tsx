@@ -2,21 +2,21 @@ import { useState, useEffect, type FC } from 'react';
 import * as Lucide from 'lucide-react';
 
 /**
- * Nostos AI Pitch Deck - Version 6.6 (Official Production Build)
+ * Nostos AI Pitch Deck - Version 6.9.1
  * - Brand: Nostos AI
- * - Motto: "Securing the Path Home."
- * - Logo: Integrated SVG Shield & Brain Architecture
+ * - Logo: Routed strictly to /logo.png based on public dir mapping
  * - Typography: Sentence case + Bold 700 + Glow Exceptions
+ * - Update: Removed // from mission subline and added underline
  */
 
 interface IconProps extends Lucide.LucideProps {
   name: string;
 }
 
-// Рендеринг вашего растрового логотипа
+// Рендеринг вашего растрового логотипа строго в формате .png
 const NostosLogo: FC<{ className?: string }> = ({ className }) => (
   <img 
-    src="/logo.jpg" 
+    src="/logo.png" 
     alt="Nostos AI Logo" 
     className={`object-cover ${className}`}
   />
@@ -64,7 +64,7 @@ export default function App() {
   if (!isReady) return (
     <div className="h-screen w-full bg-[#020408] flex items-center justify-center">
       <div className="text-blue-500 font-mono animate-pulse tracking-[0.5em] text-xs">
-        BOOTING_NOSTOS_CORE_V6.6...
+        BOOTING_NOSTOS_CORE_V6.9.1...
       </div>
     </div>
   );
@@ -82,14 +82,14 @@ export default function App() {
         <div className="flex flex-col items-center justify-center space-y-10 text-center h-full w-full max-w-4xl mx-auto px-4">
           <div className="relative">
             <div className="absolute inset-0 bg-blue-600/30 blur-[120px] rounded-full animate-pulse" />
-            <div className="relative p-2 rounded-[32px] glass-panel border-blue-500/30 shadow-[0_0_50px_rgba(59,130,246,0.2)] flex items-center justify-center">
+            <div className="relative p-2 rounded-[32px] glass-panel border-blue-500/30 shadow-[0_0_50px_rgba(59,130,246,0.2)] flex items-center justify-center overflow-hidden">
               <NostosLogo className="w-28 h-28 rounded-[24px] shadow-[0_0_20px_rgba(59,130,246,0.4)]" />
             </div>
           </div>
           
           <div className="space-y-6">
             <div className="space-y-2 tracking-tighter">
-              <p className="text-blue-500 font-mono text-xs tracking-[0.4em] mb-4 uppercase">// OUR MISSION IS:</p>
+              <p className="text-blue-500 font-mono text-xs tracking-[0.4em] mb-4 uppercase underline underline-offset-8 decoration-blue-500/40">OUR MISSION IS:</p>
               <h1 className="text-3xl md:text-5xl font-bold text-white leading-tight">
                 Every worker returns home safely<br/>
                 to their family.<br/>
@@ -277,7 +277,7 @@ export default function App() {
       
       <header className="flex justify-between items-center mb-8 relative z-20 flex-shrink-0 w-full max-w-6xl px-4">
         <div className="flex items-center gap-3">
-          <div className="p-1 bg-blue-600/10 border border-blue-500/30 rounded-[14px] flex items-center justify-center shadow-lg">
+          <div className="p-1 bg-blue-600/10 border border-blue-500/30 rounded-[14px] flex items-center justify-center shadow-lg overflow-hidden">
             <NostosLogo className="w-10 h-10 rounded-[10px]" />
           </div>
           <div>
