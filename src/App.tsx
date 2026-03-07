@@ -39,7 +39,7 @@ export default function App() {
 
     const style = document.createElement('style');
     style.innerHTML = `
-      body, html { margin: 0; padding: 0; overflow: hidden; width: 100vw; height: 100vh; box-sizing: border-box; background: #020408; color: #f1f5f9; }
+      body, html { margin: 0; padding: 0; overflow: hidden; width: 100%; height: 100%; box-sizing: border-box; background: #020408; color: #f1f5f9; }
       *, *:before, *:after { box-sizing: inherit; }
       .cyber-grid {
         background-image: 
@@ -257,7 +257,7 @@ export default function App() {
           </div>
           <div className="flex flex-col items-center space-y-4 pt-4 lg:pt-6">
             <a 
-              href="mailto:arkady.aiguardian@gmail.com?subject=Strategic%20Partnership%3A%20NOSTOS_AI%20Sandbox%202026&body=Hello%20Arkady%2C%0A%0AWe%20are%20interested%20in%20discussing%20the%20Design%20Partnership%20for%20the%20NOSTOS_AI%20platform.%0A%0APlease%20send%20us%20the%20LOI%20draft.%0A%0A%5BCompany%20Name%5D"
+              href="mailto:arkady.nostos@gmail.com?subject=Strategic%20Partnership%3A%20NOSTOS_AI%20Sandbox%202026&body=Hello%20Arkady%2C%0A%0AWe%20are%20interested%20in%20discussing%20the%20Design%20Partnership%20for%20the%20NOSTOS_AI%20platform.%0A%0APlease%20send%20us%20the%20LOI%20draft.%0A%0A%5BCompany%20Name%5D"
               className="bg-white hover:bg-blue-50 text-black px-10 py-4 lg:px-14 lg:py-5 rounded-full font-bold text-lg md:text-xl transition-all shadow-xl uppercase tracking-widest italic hover:scale-105 active:scale-95 group inline-block decoration-transparent"
             >
                <span className="flex items-center justify-center gap-3 lg:gap-4">
@@ -265,7 +265,7 @@ export default function App() {
                   <Icon name="ArrowRight" className="w-5 h-5 lg:w-6 lg:h-6 group-hover:translate-x-2 transition-transform" />
                </span>
             </a>
-            <p className="text-blue-500 font-mono text-[10px] md:text-xs uppercase tracking-[0.3em] font-bold animate-pulse mt-2">Contact: arkady.aiguardian@gmail.com</p>
+            <p className="text-blue-500 font-mono text-[10px] md:text-xs uppercase tracking-[0.3em] font-bold animate-pulse mt-2">Contact: arkady.nostos@gmail.com</p>
           </div>
         </div>
       )
@@ -276,7 +276,7 @@ export default function App() {
   const prev = () => currentSlide > 0 && setCurrentSlide(currentSlide - 1);
 
   return (
-    <div className="h-screen w-screen bg-[#020408] text-slate-100 flex flex-col items-center overflow-hidden relative selection:bg-blue-500/30 p-2 md:p-4">
+    <div className="h-screen w-full bg-[#020408] text-slate-100 flex flex-col items-center overflow-hidden relative selection:bg-blue-500/30 p-2 md:p-4">
       <div className="absolute inset-0 cyber-grid opacity-60 pointer-events-none" />
       
       {/* 1. Header (Tightened) */}
