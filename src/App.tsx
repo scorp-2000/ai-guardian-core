@@ -2,9 +2,9 @@ import { useState, useEffect, type FC } from 'react';
 import * as Lucide from 'lucide-react';
 
 /**
- * AI Guardian Pitch Deck - Version 5.0 (Universal Core)
+ * AI Guardian Pitch Deck - Version 5.1 (CTA Optimized)
+ * - Integrated Mailto Trigger for 'Become a Design Partner'
  * - De-personalized for global Tier-1 distribution
- * - Enhanced Cyber-Grid & Scanline visibility (Cache override)
  * - Perfect Center & No-Scroll Architecture
  */
 
@@ -27,7 +27,6 @@ export default function App() {
     document.head.appendChild(font);
 
     const style = document.createElement('style');
-    // Усилена контрастность сетки (0.1) и сканлайна (0.2) для гарантированной видимости
     style.innerHTML = `
       body, html { margin: 0; padding: 0; overflow: hidden; width: 100%; height: 100%; box-sizing: border-box; background: #04060b; color: #f1f5f9; }
       *, *:before, *:after { box-sizing: inherit; }
@@ -61,7 +60,7 @@ export default function App() {
   if (!isReady) return (
     <div className="h-screen w-full bg-[#04060b] flex items-center justify-center overflow-hidden">
       <div className="text-blue-500 font-mono animate-pulse uppercase tracking-[0.3em] text-xs">
-        BOOTING_GUARDIAN_SYSTEM_V5.0...
+        BOOTING_GUARDIAN_SYSTEM_V5.1...
       </div>
     </div>
   );
@@ -245,7 +244,11 @@ export default function App() {
              </div>
           </div>
           <div className="flex flex-col items-center space-y-3 pt-4">
-            <button className="bg-white hover:bg-blue-50 text-[#04060b] px-16 py-5 rounded-full font-black text-xl transition-all shadow-[0_0_40px_rgba(255,255,255,0.2)] uppercase tracking-widest italic hover:scale-105 active:scale-95 group">
+            {/* 100/10 UX: Mailto Trigger Button */}
+            <button 
+              onClick={() => window.location.href = 'mailto:arkadyand@gmail.com?subject=Strategic%20Partnership%3A%20AI%20Guardian%20Sandbox%202026&body=Hello%20Arkady%2C%0A%0AWe%20are%20interested%20in%20discussing%20the%20Design%20Partnership%20for%20the%20AI%20Guardian%20platform%20within%20the%20Ministry%20of%20Labor%20Sandbox.%0A%0APlease%20send%20us%20the%20LOI%20draft.%0A%0A%5BCompany%20Name%5D'}
+              className="bg-white hover:bg-blue-50 text-[#04060b] px-16 py-5 rounded-full font-black text-xl transition-all shadow-[0_0_40px_rgba(255,255,255,0.2)] uppercase tracking-widest italic hover:scale-105 active:scale-95 group"
+            >
                <span className="flex items-center gap-3">
                   Become a Design Partner
                   <Icon name="ArrowRight" className="group-hover:translate-x-1 transition-transform" />
