@@ -2,10 +2,10 @@ import { useState, useEffect, type FC } from 'react';
 import * as Lucide from 'lucide-react';
 
 /**
- * AI Guardian Pitch Deck - Version 4.6 (Visual Edge Optimization)
- * - Enhanced Technical Terminal with SVG Visualization
- * - Full Hebrew translation for technical blocks
- * - Zero Scroll & Perfect Center Architecture
+ * AI Guardian Pitch Deck - Version 4.7 (Sunday Meeting Prep)
+ * - Updated Deadline: 21.03.2026
+ * - Advanced Visual Terminal for Technical Depth
+ * - Dual-Language (EN/HE) Optimized
  */
 
 interface IconProps extends Lucide.LucideProps {
@@ -39,7 +39,7 @@ export default function App() {
   if (!isReady) return (
     <div className="h-screen w-full bg-slate-950 flex items-center justify-center overflow-hidden">
       <div className="text-blue-500 font-mono animate-pulse uppercase tracking-[0.3em] text-xs">
-        SYSTEM_READY_FOR_DEPLOYMENT...
+        UPDATING_REGULATORY_CALENDAR_21.03...
       </div>
     </div>
   );
@@ -75,8 +75,8 @@ export default function App() {
             </div>
           </div>
           <div className="flex gap-3 font-mono text-[9px] md:text-[10px] tracking-widest uppercase">
-             <div className="px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-xl text-blue-300">Grant: ₪1.5M</div>
-             <div className="px-4 py-2 bg-red-500/10 border border-red-500/20 rounded-xl text-red-400 font-bold">Sandbox: 10.03.2026</div>
+             <div className="px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-xl text-blue-300 italic">Grant: ₪1.5M</div>
+             <div className="px-4 py-2 bg-emerald-500/10 border border-emerald-500/20 rounded-xl text-emerald-400 font-bold">Updated Deadline: 21.03.2026</div>
           </div>
         </div>
       )
@@ -137,7 +137,6 @@ export default function App() {
       subtitle: 'Technical Supremacy',
       content: (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center h-full text-left w-full max-w-4xl mx-auto">
-           {/* Visual Terminal Area */}
            <div className="bg-black rounded-[24px] p-5 border border-blue-500/30 h-full min-h-[280px] flex flex-col justify-between relative overflow-hidden group">
               <div className="absolute inset-0 opacity-10 pointer-events-none">
                  <svg width="100%" height="100%" className="animate-pulse">
@@ -147,7 +146,6 @@ export default function App() {
                     <rect width="100%" height="100%" fill="url(#grid)" />
                  </svg>
               </div>
-              
               <div className="flex justify-between items-center relative z-10">
                  <div className="px-2 py-0.5 bg-blue-500/20 rounded-full text-[9px] text-blue-400 font-mono border border-blue-500/30 tracking-widest flex items-center gap-1">
                     <div className="w-1 h-1 bg-blue-400 rounded-full animate-ping" />
@@ -155,47 +153,25 @@ export default function App() {
                  </div>
                  <Icon name="Cpu" size={24} className="text-blue-400 animate-pulse" />
               </div>
-
-              {/* Dynamic Radar Visualization */}
               <div className="flex-1 flex items-center justify-center relative">
                  <div className="w-32 h-32 border border-blue-500/20 rounded-full flex items-center justify-center relative">
                     <div className="absolute inset-0 border border-blue-500/40 rounded-full animate-ping opacity-20" />
                     <div className="w-20 h-20 border border-emerald-500/30 rounded-full animate-pulse" />
                     <div className="absolute top-4 left-10 w-2 h-2 bg-red-500 rounded shadow-[0_0_8px_red] animate-bounce" />
-                    <div className="absolute bottom-6 right-8 w-2 h-2 bg-emerald-400 rounded shadow-[0_0_8px_#34d399] opacity-60" />
-                    <div className="text-[8px] font-mono text-blue-400/40 uppercase absolute -bottom-4">Detection_Grid_Alpha</div>
+                    <div className="text-[8px] font-mono text-blue-400/40 uppercase absolute -bottom-4 tracking-tighter">Detection_Grid_Alpha</div>
                  </div>
               </div>
-
               <div className="p-3 bg-slate-900/90 rounded-xl border border-slate-800 font-mono text-[9px] leading-tight text-blue-300 relative z-10 backdrop-blur-sm">
                  <p className="text-emerald-400 font-bold">{`>> YOLO26_PIPELINE: OPTIMIZED`}</p>
-                 <p className="opacity-70">{`>> ANALYZING TRAJECTORY_MODELS...`}</p>
                  <p className="text-red-500 font-bold animate-pulse">{`>> WARNING: ZONE_BREACH [ID_422]`}</p>
                  <p className="text-blue-400">{`>> HAILO_NPU_LATENCY: 0.008s`}</p>
               </div>
            </div>
-
-           {/* Features with Hebrew */}
            <div className="flex flex-col justify-center space-y-4 h-full px-2">
               {[
-                { 
-                  icon: 'Zap', color: 'blue', 
-                  title: 'NMS-free Latency', 
-                  heb: 'השהייה אפסית (NMS-free)',
-                  desc: 'Real-time hazard detection with zero bottlenecks.' 
-                },
-                { 
-                  icon: 'Lock', color: 'emerald', 
-                  title: 'Data Sovereignty', 
-                  heb: 'ריבונות מלאה על המידע',
-                  desc: '100% On-site processing. Privacy by design.' 
-                },
-                { 
-                  icon: 'Eye', color: 'purple', 
-                  title: 'Predictive AI', 
-                  heb: 'בינה מלאכותית חוזת פני עתיד',
-                  desc: 'Accident prevention via trajectory analytics.' 
-                }
+                { icon: 'Zap', color: 'blue', title: 'NMS-free Latency', heb: 'השהייה אפסית (NMS-free)', desc: 'Real-time hazard detection.' },
+                { icon: 'Lock', color: 'emerald', title: 'Data Sovereignty', heb: 'ריבונות מלאה על המידע', desc: '100% On-site processing.' },
+                { icon: 'Eye', color: 'purple', title: 'Predictive AI', heb: 'בינה מלאכותית חוזת עתיד', desc: 'Accident prevention.' }
               ].map((item, idx) => (
                 <div key={idx} className="flex gap-4 items-start group">
                    <div className={`p-2.5 bg-${item.color}-500/10 rounded-xl border border-${item.color}-500/20 group-hover:scale-110 transition-transform`}>
@@ -215,15 +191,23 @@ export default function App() {
       )
     },
     {
-      title: 'Design Partnership',
-      subtitle: 'Regulatory Sandbox 2026',
+      title: 'Regulatory Roadmap',
+      subtitle: 'Ministry of Labor Sandbox 2026',
       content: (
         <div className="flex flex-col items-center justify-center space-y-4 h-full text-center w-full max-w-4xl mx-auto px-4">
+          <div className="p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-3xl w-full flex items-center justify-between">
+             <div className="text-left">
+                <p className="text-emerald-400 font-mono text-[10px] uppercase tracking-tighter leading-none">New Submission Deadline</p>
+                <p className="text-white font-black text-2xl tracking-tighter italic">MARCH 21, 23:59</p>
+             </div>
+             <div className="text-right font-heebo" dir="rtl">
+                <p className="text-emerald-400 text-xs font-bold leading-none">המועד עודכן בעקבות המצב הביטחוני</p>
+                <p className="text-slate-400 text-[10px] mt-1">הזדמנות להצטרף כשותף Tier-1</p>
+             </div>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 w-full">
-             <div className="p-4 bg-slate-900/50 rounded-[24px] border border-slate-800 flex items-center gap-3 shadow-inner">
-                <div className="p-2 bg-blue-600/20 rounded-xl border border-blue-500/30">
-                   <Icon name="Users" className="text-blue-400 w-6 h-6" />
-                </div>
+             <div className="p-4 bg-slate-900/50 rounded-[24px] border border-slate-800 flex items-center gap-3">
+                <div className="p-2 bg-blue-600/20 rounded-xl border border-blue-500/30"><Icon name="Users" className="text-blue-400 w-6 h-6" /></div>
                 <div className="text-left">
                    <p className="text-white font-black text-lg tracking-tighter uppercase italic leading-none">Arkady</p>
                    <p className="text-blue-400 font-bold text-[9px] tracking-widest uppercase mt-1">26Y System Expertise</p>
@@ -236,17 +220,12 @@ export default function App() {
                 </ul>
              </div>
           </div>
-          
           <div className="flex flex-col items-center space-y-2 pt-2">
             <button className="bg-white hover:bg-blue-50 text-slate-950 px-12 py-3 rounded-full font-black text-lg transition-all shadow-2xl uppercase tracking-tighter italic hover:scale-105 active:scale-95">
-               Sign LOI Now
+               Submit LOI via ConTech
             </button>
-            <p className="text-blue-500 font-mono text-[9px] uppercase tracking-widest font-bold">Window Closes: March 10, 2026</p>
+            <p className="text-blue-500 font-mono text-[9px] uppercase tracking-widest font-bold">Pilot Launch: Q3 2026</p>
           </div>
-          
-          <p className="text-[9px] text-slate-600 font-mono tracking-[0.2em] uppercase italic font-heebo" dir="rtl">
-            פרויקט פורץ דרך בבטיחות ובביטוח - ישראל 2026
-          </p>
         </div>
       )
     }
@@ -257,7 +236,6 @@ export default function App() {
 
   return (
     <div className="h-screen w-full bg-[#04060b] text-slate-100 p-4 md:p-6 flex flex-col items-center overflow-hidden relative selection:bg-blue-500/30">
-      
       <header className="flex justify-between items-center mb-4 relative z-10 flex-shrink-0 w-full max-w-5xl px-2">
         <div className="flex items-center gap-2">
           <div className="p-1.5 bg-blue-600 rounded-lg shadow-lg shadow-blue-500/50">
@@ -270,7 +248,7 @@ export default function App() {
         </div>
         <div className="hidden md:flex items-center gap-4 text-[8px] font-mono text-slate-500 tracking-widest text-right uppercase">
           <div className="space-y-0.5 text-left">
-            <p className="text-blue-400">Founder: Arkady</p>
+            <p className="text-blue-400 italic">Founder: Arkady</p>
             <p className="font-heebo" dir="rtl">26 שנות ניסיון</p>
           </div>
           <div className="h-5 w-px bg-slate-800" />
@@ -283,9 +261,7 @@ export default function App() {
 
       <main className="flex-1 flex flex-col justify-center items-center relative z-10 w-full max-w-5xl overflow-hidden px-2">
         <div className="bg-slate-900/40 backdrop-blur-[40px] border border-white/5 rounded-[2.5rem] p-6 md:p-8 shadow-[0_0_100px_rgba(0,0,0,0.8)] h-full max-h-[75vh] w-full flex flex-col relative overflow-hidden group">
-          
           <div className="absolute top-0 right-0 w-32 h-32 border-t border-r border-blue-500/10 rounded-tr-[2.5rem] pointer-events-none group-hover:border-blue-500/30 transition-all duration-700" />
-          
           <div className="mb-4 text-left flex-shrink-0">
             <h2 className="text-2xl md:text-4xl font-black text-white mb-1 tracking-tighter leading-none uppercase">{slides[currentSlide].title}</h2>
             <div className="flex items-center gap-3">
@@ -293,7 +269,6 @@ export default function App() {
               <p className="text-blue-400 text-xs md:text-sm font-black italic tracking-tight uppercase leading-none">{slides[currentSlide].subtitle}</p>
             </div>
           </div>
-          
           <div className="flex-1 overflow-hidden flex flex-col justify-center items-center w-full">
             {slides[currentSlide].content}
           </div>
