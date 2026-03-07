@@ -2,11 +2,10 @@ import { useState, useEffect, type FC } from 'react';
 import * as Lucide from 'lucide-react';
 
 /**
- * AI Guardian Pitch Deck - Version 4.8 (Final Sunday Polish)
- * - Anti-Void UI: Global Grid & Scanline Overlays
- * - Updated Deadline: 21.03.2026
+ * AI Guardian Pitch Deck - Version 5.0 (Universal Core)
+ * - De-personalized for global Tier-1 distribution
+ * - Enhanced Cyber-Grid & Scanline visibility (Cache override)
  * - Perfect Center & No-Scroll Architecture
- * - Full Dual-Language (EN/HE) Synchronization
  */
 
 interface IconProps extends Lucide.LucideProps {
@@ -28,24 +27,26 @@ export default function App() {
     document.head.appendChild(font);
 
     const style = document.createElement('style');
+    // Усилена контрастность сетки (0.1) и сканлайна (0.2) для гарантированной видимости
     style.innerHTML = `
       body, html { margin: 0; padding: 0; overflow: hidden; width: 100%; height: 100%; box-sizing: border-box; background: #04060b; color: #f1f5f9; }
       *, *:before, *:after { box-sizing: inherit; }
       .cyber-grid {
         background-image: 
-          linear-gradient(to right, rgba(59, 130, 246, 0.05) 1px, transparent 1px),
-          linear-gradient(to bottom, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+          linear-gradient(to right, rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
         background-size: 40px 40px;
       }
       .scanline {
         width: 100%;
         height: 100px;
         z-index: 50;
-        background: linear-gradient(0deg, transparent 0%, rgba(59, 130, 246, 0.03) 50%, transparent 100%);
-        opacity: 0.1;
+        background: linear-gradient(0deg, transparent 0%, rgba(59, 130, 246, 0.05) 50%, transparent 100%);
+        opacity: 0.2;
         position: absolute;
         bottom: 100%;
-        animation: scan 8s linear infinite;
+        animation: scan 6s linear infinite;
+        pointer-events: none;
       }
       @keyframes scan {
         0% { bottom: 100%; }
@@ -60,7 +61,7 @@ export default function App() {
   if (!isReady) return (
     <div className="h-screen w-full bg-[#04060b] flex items-center justify-center overflow-hidden">
       <div className="text-blue-500 font-mono animate-pulse uppercase tracking-[0.3em] text-xs">
-        BOOTING_GUARDIAN_SYSTEM_V4.8...
+        BOOTING_GUARDIAN_SYSTEM_V5.0...
       </div>
     </div>
   );
@@ -171,7 +172,7 @@ export default function App() {
                  <Icon name="Cpu" size={28} className="text-blue-400 animate-pulse" />
               </div>
 
-              <div className="flex-1 flex items-center justify-center relative">
+              <div className="flex-1 flex items-center justify-center relative z-10">
                  <div className="w-40 h-40 border border-blue-500/20 rounded-full flex items-center justify-center relative">
                     <div className="absolute inset-0 border border-blue-500/40 rounded-full animate-ping opacity-10" />
                     <div className="w-24 h-24 border border-emerald-500/30 rounded-full flex items-center justify-center">
@@ -190,7 +191,7 @@ export default function App() {
               </div>
            </div>
 
-           <div className="flex flex-col justify-center space-y-5 h-full px-2">
+           <div className="flex flex-col justify-center space-y-5 h-full px-2 relative z-10">
               {[
                 { icon: 'Zap', color: 'blue', title: 'NMS-free Latency', heb: 'השהייה אפסית (NMS-free)', desc: 'Zero bottlenecks. Life prevention.' },
                 { icon: 'Lock', color: 'emerald', title: 'Data Sovereignty', heb: 'ריבונות מלאה על המידע', desc: '100% On-site. Privacy by design.' },
@@ -217,7 +218,7 @@ export default function App() {
       title: 'Strategic Roadmap',
       subtitle: 'Pilot & Partnership Opportunity',
       content: (
-        <div className="flex flex-col items-center justify-center space-y-6 h-full text-center w-full max-w-4xl mx-auto px-4">
+        <div className="flex flex-col items-center justify-center space-y-6 h-full text-center w-full max-w-4xl mx-auto px-4 relative z-10">
           <div className="p-5 bg-emerald-500/10 border border-emerald-500/30 rounded-[32px] w-full flex items-center justify-between shadow-lg">
              <div className="text-left">
                 <p className="text-emerald-400 font-mono text-[10px] uppercase tracking-widest mb-1">New Submission Window</p>
@@ -246,11 +247,11 @@ export default function App() {
           <div className="flex flex-col items-center space-y-3 pt-4">
             <button className="bg-white hover:bg-blue-50 text-[#04060b] px-16 py-5 rounded-full font-black text-xl transition-all shadow-[0_0_40px_rgba(255,255,255,0.2)] uppercase tracking-widest italic hover:scale-105 active:scale-95 group">
                <span className="flex items-center gap-3">
-                  Submit LOI via ConTech
+                  Become a Design Partner
                   <Icon name="ArrowRight" className="group-hover:translate-x-1 transition-transform" />
                </span>
             </button>
-            <p className="text-blue-500 font-mono text-[10px] uppercase tracking-[0.4em] font-bold animate-pulse">Contact: shirly@contech.me</p>
+            <p className="text-blue-500 font-mono text-[10px] uppercase tracking-[0.3em] font-bold animate-pulse">Contact: arkadyand@gmail.com</p>
           </div>
         </div>
       )
@@ -263,8 +264,8 @@ export default function App() {
   return (
     <div className="h-screen w-full bg-[#04060b] text-slate-100 p-4 md:p-6 flex flex-col items-center overflow-hidden relative selection:bg-blue-500/30">
       
-      {/* Background Layers */}
-      <div className="absolute inset-0 cyber-grid opacity-20 pointer-events-none" />
+      {/* Background Layers - Intensified */}
+      <div className="absolute inset-0 cyber-grid opacity-50 pointer-events-none" />
       <div className="scanline" />
       
       <header className="flex justify-between items-center mb-6 relative z-10 flex-shrink-0 w-full max-w-5xl px-4">
@@ -292,7 +293,7 @@ export default function App() {
 
       <main className="flex-1 flex flex-col justify-center items-center relative z-10 w-full max-w-5xl overflow-hidden px-4">
         <div className="bg-slate-900/30 backdrop-blur-[60px] border border-white/5 rounded-[3rem] p-8 md:p-10 shadow-[0_0_100px_rgba(0,0,0,0.8)] h-full max-h-[76vh] w-full flex flex-col relative overflow-hidden group">
-          <div className="absolute top-0 right-0 w-48 h-48 border-t border-r border-blue-500/10 rounded-tr-[3rem] pointer-events-none group-hover:border-blue-500/40 transition-all duration-1000" />
+          <div className="absolute top-0 right-0 w-48 h-48 border-t border-r border-blue-500/20 rounded-tr-[3rem] pointer-events-none group-hover:border-blue-500/50 transition-all duration-1000" />
           
           <div className="mb-6 text-left flex-shrink-0 relative z-10">
             <h2 className="text-3xl md:text-5xl font-black text-white mb-2 tracking-tighter leading-none uppercase">{slides[currentSlide].title}</h2>
@@ -328,8 +329,8 @@ export default function App() {
         </div>
       </footer>
 
-      <div className="fixed top-0 right-0 w-[600px] h-[600px] bg-blue-600/[0.03] blur-[150px] rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none animate-pulse" />
-      <div className="fixed bottom-0 left-0 w-[600px] h-[600px] bg-indigo-600/[0.03] blur-[150px] rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none" />
+      <div className="fixed top-0 right-0 w-[600px] h-[600px] bg-blue-600/[0.04] blur-[150px] rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none animate-pulse" />
+      <div className="fixed bottom-0 left-0 w-[600px] h-[600px] bg-indigo-600/[0.04] blur-[150px] rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none" />
     </div>
   );
 }
